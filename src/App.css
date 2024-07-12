@@ -1,38 +1,200 @@
-.App {
+html, body {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffe6e6;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.header-logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #d6336c;
+  text-decoration: none;
+}
+
+.header-link {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  min-width: 500px; 
+  background-color: #ffe6e6; 
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #d6336c;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-form {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-list {
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #d6336c;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item h5 {
+  margin: 0;
+  color: #333;
+}
+
+.todo-item p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.todo-item-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.todo-item button {
+  background-color: #d6336c; 
+  border-color: #d6336c;
+  color: #fff;
+}
+
+.todo-item button:hover {
+  background-color: #a52a5b;
+  border-color: #a52a5b;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  border-color: #d6336c;
+  box-shadow: none;
+}
+
+.react-datepicker-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d6336c; 
+  border-radius: 5px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #d6336c;
+  border-color: #d6336c;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #a52a5b;
+  border-color: #a52a5b;
+}
+
+.page-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 20vh;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.page-content h1 {
+  color: #d6336c;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-content p {
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #d6336c !important;
+  border-color: #d6336c !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #a52a5b !important;
+  border-color: #a52a5b !important;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 6px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
