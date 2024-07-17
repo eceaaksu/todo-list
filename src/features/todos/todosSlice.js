@@ -1,20 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     addTodo: (state, action) => {
       state.push(action.payload);
     },
     removeTodo: (state, action) => {
-      return state.filter(todo => todo.id !== action.payload);
+      return state.filter((todo) => todo.id !== action.payload);
     },
     updateTodo: (state, action) => {
-      const index = state.findIndex(todo => todo.id === action.payload.id);
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
       if (index !== -1) {
         state[index] = action.payload;
       }
+
+      /*
+      return state.map((todo) => {
+        if(todo.id === action.payload.id) {
+          return action.payload
+        }
+
+        return todo
+      });
+      */
     },
   },
 });

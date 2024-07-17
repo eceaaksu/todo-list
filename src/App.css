@@ -15,43 +15,71 @@ body {
 }
 
 .header {
-  width: 100%;
-  background-color: #ffe6e6;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
-.header-left {
-  flex: 1;
+.menu-button {
+    width: 95%;
+    height: 95%;
+    background-color:#2F4F4F;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header-right {
-  display: flex;
-  gap: 15px;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background-color: #ffe6e6;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s;
+    padding: 20px;
 }
 
-.header-logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: #d6336c;
-  text-decoration: none;
+.sidebar.open {
+    left: 0;
 }
 
-.header-link {
-  font-size: 16px;
-  color: #000;
-  text-decoration: none;
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
 }
 
-.header-link:hover {
-  text-decoration: underline;
+.sidebar-link {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.sidebar-link:hover {
+    text-decoration: underline;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .content {
@@ -63,15 +91,15 @@ body {
 }
 
 .container {
-  width: 80%;
-  max-width: 800px;
-  min-width: 500px; 
+  width: 90%;
+  max-width: 1000px;
+  min-width: 600px; 
   background-color: #ffe6e6; 
   border: 1px solid #e0e0e0;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: 4px;
 }
 
 h1 {
@@ -81,11 +109,21 @@ h1 {
 }
 
 .todo-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+.todo-form .form-group {
+  flex: 1;
 }
 
 .todo-list {
   margin-top: 20px;
+  width: 100%;
 }
 
 .todo-item {
@@ -113,7 +151,7 @@ h1 {
 .todo-item-buttons {
   display: flex;
   gap: 10px;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .todo-item button {
@@ -141,7 +179,7 @@ h1 {
 .react-datepicker__input-container input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #d6336c; 
+  border: 1px solid #ffffff; 
   border-radius: 5px;
   box-shadow: none;
   cursor: pointer;
@@ -149,7 +187,8 @@ h1 {
 
 button[type="submit"] {
   display: block;
-  width: 100%;
+  margin-top: -14px;
+  width: auto;
   background-color: #d6336c;
   border-color: #d6336c;
   color: #fff;
@@ -179,8 +218,8 @@ button[type="submit"]:hover {
 }
 
 .btn-primary {
-  background-color: #d6336c !important;
-  border-color: #d6336c !important;
+  background-color: #2F4F4F !important;
+  border-color: #2F4F4F !important;
   color: #fff !important;
 }
 
@@ -188,13 +227,33 @@ button[type="submit"]:hover {
   background-color: #a52a5b !important;
   border-color: #a52a5b !important;
 }
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+
+.table-container {
+  margin-top: 20px;
   width: 100%;
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 6px 0;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #d6336c;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #ffe6e6;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 200px;
 }

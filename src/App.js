@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-import Header from './components/Header';
+import Header from "./components/Header";
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Footer from './components/Footer';
+import logo from './assets/logo.png'; 
 
 function App() {
   return (
@@ -18,17 +18,21 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={
-              <div className="container">
-                <TodoForm />
-                <TodoList />
-              </div>
-            } />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact-us" element={<ContactUs />} />
+            <Route
+              exact
+              path="/"
+              element={
+                <div className="container">
+                  <img src={logo} alt="Logo" className="logo" />
+                  <TodoForm />
+                  <TodoList />
+                </div>
+              }
+            />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </div>
-        <Footer />
       </Router>
     </Provider>
   );
