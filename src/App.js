@@ -1,15 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './store';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 import Header from "./components/Header";
-import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import logo from './assets/logo.png'; 
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Dashboard from "./pages/Dashboard";
+import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "./assets/logo.png";
+import "./App.css";
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
             />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/dashboard" element={<Dashboard />} />{" "}
           </Routes>
         </div>
       </Router>

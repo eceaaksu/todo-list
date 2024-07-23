@@ -4,7 +4,7 @@ import { addTodo } from "../features/todos/todosSlice";
 import { Form, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "../App.css";
+import axios from "axios";
 
 const TodoForm = () => {
   const [title, setTitle] = useState("");
@@ -13,21 +13,25 @@ const TodoForm = () => {
   const [priority, setPriority] = useState("Low");
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(
-      addTodo({
-        id: Date.now(),
-        title,
-        description,
-        date: date,
-        priority,
-      })
-    );
-    setTitle("");
-    setDescription("");
-    setDate(new Date());
-    setPriority("Low");
+    const newTodo = {
+      title,
+      description,
+      date: date.toISOString(),
+      priority,
+    };
+
+    try {
+      const response = await axios.post("http://localhost:3000/todos", newTodo);
+      dispatch(addTodo(response.data));
+      setTitle("");
+      setDescription("");
+      setDate(new Date());
+      setPriority("Low");
+    } catch (error) {
+      console.error("Error adding todo:", error);
+    }
   };
 
   return (
@@ -77,4 +81,4 @@ const TodoForm = () => {
   );
 };
 
-export default TodoForm;
+export default TodoForm;

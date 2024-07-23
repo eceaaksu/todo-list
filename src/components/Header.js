@@ -24,6 +24,9 @@ const Header = () => {
           <Link to="/" className="sidebar-link" onClick={toggleMenu}>
             Home
           </Link>
+          <Link to="/dashboard" className="sidebar-link" onClick={toggleMenu}>
+            Dashboard
+          </Link>
           <Link to="/about" className="sidebar-link" onClick={toggleMenu}>
             About
           </Link>

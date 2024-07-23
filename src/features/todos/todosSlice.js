@@ -15,16 +15,6 @@ export const todosSlice = createSlice({
       if (index !== -1) {
         state[index] = action.payload;
       }
-
-      /*
-      return state.map((todo) => {
-        if(todo.id === action.payload.id) {
-          return action.payload
-        }
-
-        return todo
-      });
-      */
     },
   },
 });
