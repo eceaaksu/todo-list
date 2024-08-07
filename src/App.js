@@ -12,7 +12,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./assets/logo.png";
 import "./App.css";
 
-
 function App() {
   return (
     <Provider store={store}>
@@ -33,7 +32,7 @@ function App() {
             />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/dashboard" element={<Dashboard />} />{" "}
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
       </Router>

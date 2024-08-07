@@ -1,11 +1,14 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "../App.css";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="page-content">
-      <h1>About Us</h1>
-      <p>Welcome to the To-Do List application. This application helps you organize your tasks efficiently.</p>
+      <h1>{t("about.title")}</h1>
+      <p>{t("about.description")}</p>
     </div>
   );
 };

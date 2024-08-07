@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import { Table, Button } from "react-bootstrap";
 
 const Dashboard = () => {
   const [todos, setTodos] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetchTodos();
@@ -20,7 +22,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      //await axios.delete(`http://localhost:3000/todos/${id}`);
+      // await axios.delete(`http://localhost:3000/todos/${id}`);
       setTodos(todos.filter((todo) => todo.id !== id));
     } catch (error) {
       console.error("Error deleting todo:", error);
@@ -29,15 +31,15 @@ const Dashboard = () => {
 
   return (
     <div className="container">
-      <h1>Dashboard</h1>
+      <h1>{t("dashboard.title")}</h1>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Priority</th>
-            <th>Action</th>
+            <th>{t("todo.title")}</th>
+            <th>{t("todo.description")}</th>
+            <th>{t("todo.date")}</th>
+            <th>{t("todo.priority")}</th>
+            <th>{t("dashboard.action")}</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +51,7 @@ const Dashboard = () => {
               <td>{todo.priority}</td>
               <td>
                 <Button variant="danger" onClick={() => handleDelete(todo.id)}>
-                  Delete
+                  {t("todo.delete")}
                 </Button>
               </td>
             </tr>

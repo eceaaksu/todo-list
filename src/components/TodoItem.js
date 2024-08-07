@@ -4,9 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import { removeTodo, updateTodo } from "../features/todos/todosSlice";
+import { useTranslation } from "react-i18next";
 import "../App.css";
 
 const TodoItem = ({ todo }) => {
+  const { t } = useTranslation();
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [title, setTitle] = useState(todo.title);
@@ -48,22 +50,22 @@ const TodoItem = ({ todo }) => {
         <td>{todo.priority}</td>
         <td className="todo-item-buttons">
           <Button variant="success" onClick={handleUpdateShow}>
-            Update
+            {t("todo.update")}
           </Button>
           <Button variant="danger" onClick={handleDeleteShow}>
-            Delete
+            {t("todo.delete")}
           </Button>
         </td>
       </tr>
 
       <Modal show={showUpdateModal} onHide={handleUpdateClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Todo</Modal.Title>
+          <Modal.Title>{t("todo.update")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Label>Title</Form.Label>
+              <Form.Label>{t("todo.title")}</Form.Label>
               <Form.Control
                 type="text"
                 value={title}
@@ -71,7 +73,7 @@ const TodoItem = ({ todo }) => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Description</Form.Label>
+              <Form.Label>{t("todo.description")}</Form.Label>
               <Form.Control
                 type="text"
                 value={description}
@@ -79,7 +81,7 @@ const TodoItem = ({ todo }) => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Date</Form.Label>
+              <Form.Label>{t("todo.date")}</Form.Label>
               <DatePicker
                 selected={date}
                 onChange={(date) => setDate(date)}
@@ -87,40 +89,40 @@ const TodoItem = ({ todo }) => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Priority</Form.Label>
+              <Form.Label>{t("todo.priority")}</Form.Label>
               <Form.Control
                 as="select"
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
               >
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="Low">{t("todo.priority")}</option>
+                <option value="Medium">{t("todo.priority")}</option>
+                <option value="High">{t("todo.priority")}</option>
               </Form.Control>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={handleUpdateClose}>
-            Close
+            {t("todo.close")}
           </Button>
           <Button variant="danger" onClick={handleUpdate}>
-            Save Changes
+            {t("todo.saveChanges")}
           </Button>
         </Modal.Footer>
       </Modal>
 
       <Modal show={showDeleteModal} onHide={handleDeleteClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Delete Todo</Modal.Title>
+          <Modal.Title>{t("todo.delete")}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to delete this todo?</Modal.Body>
+        <Modal.Body>{t("todo.deleteConfirmation")}</Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={handleDeleteClose}>
-            Close
+            {t("todo.close")}
           </Button>
           <Button variant="danger" onClick={handleDelete}>
-            Delete
+            {t("todo.delete")}
           </Button>
         </Modal.Footer>
       </Modal>

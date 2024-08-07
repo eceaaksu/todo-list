@@ -5,8 +5,10 @@ import { Form, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const TodoForm = () => {
+  const { t } = useTranslation();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
@@ -39,7 +41,7 @@ const TodoForm = () => {
       <Form.Group>
         <Form.Control
           type="text"
-          placeholder="Title"
+          placeholder={t("todo.taskPlaceholder")}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           className="form-control"
@@ -48,7 +50,7 @@ const TodoForm = () => {
       <Form.Group>
         <Form.Control
           type="text"
-          placeholder="Description"
+          placeholder={t("todo.description")}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="form-control"
@@ -69,13 +71,13 @@ const TodoForm = () => {
           onChange={(e) => setPriority(e.target.value)}
           className="form-control"
         >
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+          <option value="Low">{t("todo.priority")}</option>
+          <option value="Medium">{t("todo.priority")}</option>
+          <option value="High">{t("todo.priority")}</option>
         </Form.Control>
       </Form.Group>
       <Button variant="primary" type="submit">
-        Add
+        {t("todo.addTask")}
       </Button>
     </Form>
   );

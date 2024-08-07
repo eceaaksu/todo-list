@@ -87,7 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .container {
@@ -204,17 +204,12 @@ button[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: 80vh;
   text-align: center;
 }
 
 .page-content h1 {
   color: #d6336c;
-  margin-bottom: 20px;
-}
-
-.page-content p {
-  color: #333;
 }
 
 .btn-primary {
@@ -256,4 +251,51 @@ button[type="submit"]:hover {
   display: block;
   margin: 0 auto 20px auto;
   max-width: 200px;
+}
+
+.contact-table-container {
+  margin-top: 4px;
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d6336c; 
+  padding: 10px; 
+}
+
+.contact-table {
+  width: 800px;
+  border-collapse: collapse;
+}
+
+.contact-table th, .contact-table td {
+  border: 1px solid #d6336c;
+  padding: 8px;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #ffe6e6;
+}
+
+.contact-table td {
+  background-color: #ffffff;
+  word-wrap: break-word;
+}
+
+.language-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.language-switcher select {
+  background: #d6336c;
+  border: 1px solid #a52a5b;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.language-switcher select:hover {
+  background-color: #a52a5b;
 }

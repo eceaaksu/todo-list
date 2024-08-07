@@ -1,0 +1,44 @@
+{
+  "header": {
+    "title": "Todo List",
+    "switchLanguage": "Switch Language",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "todo": {
+    "addTask": "Add Task",
+    "taskPlaceholder": "Title",
+    "title": "Title",
+    "description": "Description",
+    "date": "Date",
+    "priority": "Priority",
+    "actions": "Actions",
+    "update": "Update",
+    "delete": "Delete",
+    "close": "Close",
+    "saveChanges": "Save Changes",
+    "deleteConfirmation": "Are you sure you want to delete this todo?"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Welcome to the To-Do List application. This application helps you organize your tasks efficiently."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeMessage": "Welcome to the Dashboard!",
+    "action": "Action"
+  },
+  "contact": {
+    "title": "Contact List",
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "address": "Address",
+    "company": "Company",
+    "description": "This is the Contact Us page."
+  }
+}

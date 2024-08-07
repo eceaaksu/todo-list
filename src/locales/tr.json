@@ -1,0 +1,44 @@
+{
+  "header": {
+    "title": "Yapılacaklar Listesi",
+    "switchLanguage": "Dili Değiştir",
+    "home": "Ana Sayfa",
+    "dashboard": "Gösterge Paneli",
+    "about": "Hakkında",
+    "contact": "İletişim"
+  },
+  "todo": {
+    "addTask": "Görev Ekle",
+    "taskPlaceholder": "Başlık",
+    "title": "Başlık",
+    "description": "Açıklama",
+    "date": "Tarih",
+    "priority": "Öncelik",
+    "actions": "Eylemler",
+    "update": "Güncelle",
+    "delete": "Sil",
+    "close": "Kapat",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "deleteConfirmation": "Bu görevi silmek istediğinizden emin misiniz?"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Yapılacaklar Listesi uygulamasına hoş geldiniz. Bu uygulama, görevlerinizi düzenli bir şekilde organize etmenize yardımcı olur."
+  },
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "welcomeMessage": "Gösterge Paneline Hoş Geldiniz!",
+    "action": "Eylem"
+  },
+  "contact": {
+    "title": "İletişim Listesi",
+    "name": "Ad",
+    "username": "Kullanıcı Adı",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "website": "Web Sitesi",
+    "address": "Adres",
+    "company": "Şirket",
+    "description": "Bu, İletişim sayfasıdır."
+  }
+}

@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../App.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value);
   };
 
   return (
@@ -22,18 +28,24 @@ const Header = () => {
         </div>
         <div className="sidebar-content">
           <Link to="/" className="sidebar-link" onClick={toggleMenu}>
-            Home
+            {t("header.home")}
           </Link>
           <Link to="/dashboard" className="sidebar-link" onClick={toggleMenu}>
-            Dashboard
+            {t("header.dashboard")}
           </Link>
           <Link to="/about" className="sidebar-link" onClick={toggleMenu}>
-            About
+            {t("header.about")}
           </Link>
           <Link to="/contact" className="sidebar-link" onClick={toggleMenu}>
-            Contact
+            {t("header.contact")}
           </Link>
         </div>
+      </div>
+      <div className="language-switcher">
+        <select onChange={changeLanguage} value={i18n.language}>
+          <option value="en">English</option>
+          <option value="tr">Türkçe</option>
+        </select>
       </div>
     </div>
   );
