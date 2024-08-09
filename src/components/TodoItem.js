@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import { removeTodo, updateTodo } from "../features/todos/todosSlice";
 import { useTranslation } from "react-i18next";
-import "../App.css";
+import "../App.scss";
 
 const TodoItem = ({ todo }) => {
   const { t } = useTranslation();

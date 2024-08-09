@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import TodoItem from "./TodoItem";
 import { useTranslation } from "react-i18next";
-import "../App.css";
+import "../App.scss";
 
 const TodoList = () => {
   const { t } = useTranslation();

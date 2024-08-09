@@ -10,7 +10,7 @@ import ContactUs from "./pages/ContactUs";
 import Dashboard from "./pages/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./assets/logo.png";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (

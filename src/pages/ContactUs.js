@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import "../App.css";
+import "../App.scss";
 
 const ContactUs = () => {
   const [users, setUsers] = useState([]);

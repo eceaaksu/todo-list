@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import "../App.css";
+import "../App.scss";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

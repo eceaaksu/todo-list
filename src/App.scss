@@ -1,0 +1,348 @@
+$font-family: 'Arial', sans-serif;
+$primary-color: #d6336c;
+$secondary-color: #2F4F4F;
+$background-color: #ffe6e6;
+$text-color: #333;
+$border-color: #d6336c;
+$hover-color: #a52a5b;
+
+html,
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  .menu-button {
+    width: 95%;
+    height: 95%;
+    background-color: $secondary-color;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: $background-color;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s;
+  padding: 20px;
+
+  &.open {
+    left: 0;
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+
+    .sidebar-link {
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .close-button {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 0;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: $secondary-color;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+
+        &:before,
+        &:after {
+          background-color: $hover-color;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  min-width: 600px;
+  background-color: $background-color;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  .todo-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 10px;
+
+    .form-group {
+      flex: 1;
+    }
+  }
+
+  .todo-list {
+    margin-top: 20px;
+    width: 100%;
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+      h5 {
+        margin: 0;
+        color: $text-color;
+      }
+
+      p {
+        margin: 0;
+        color: #6c757d;
+      }
+
+      .todo-item-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        button {
+          background-color: $primary-color;
+          border-color: $primary-color;
+          color: #fff;
+
+          &:hover {
+            background-color: $hover-color;
+            border-color: $hover-color;
+          }
+        }
+      }
+    }
+  }
+
+  .form-control {
+    margin-bottom: 15px;
+    border-color: $border-color;
+    box-shadow: none;
+  }
+
+  .react-datepicker-wrapper {
+    display: block;
+    width: 100%;
+
+    .react-datepicker__input-container {
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        box-shadow: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  button[type="submit"] {
+    display: block;
+    margin-top: -14px;
+    width: auto;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+
+    &:hover {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
+  }
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+  }
+}
+
+.btn-primary {
+  background-color: $secondary-color !important;
+  border-color: $secondary-color !important;
+  color: #fff !important;
+
+  &:hover {
+    background-color: $hover-color !important;
+    border-color: $hover-color !important;
+  }
+}
+
+.table-container {
+  margin-top: 20px;
+  width: 100%;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid $border-color;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: $background-color;
+    }
+
+    td {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 200px;
+}
+
+.contact-table-container {
+  margin-top: 4px;
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid $border-color;
+  padding: 10px;
+
+  .contact-table {
+    width: 800px;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid $border-color;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: $background-color;
+    }
+
+    td {
+      background-color: #ffffff;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.language-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  select {
+    background: $primary-color;
+    border: 1px solid $hover-color;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
